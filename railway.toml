@@ -1,0 +1,10 @@
+# Railway deployment configuration
+version: "1"
+build:
+  command: npm run build
+start:
+  command: ./railway.sh
+env:
+  NODE_ENV: production
+  PORT: $PORT
+  GOOGLE_GENERATIVE_AI_API_KEY: $GOOGLE_GENERATIVE_AI_API_KEY

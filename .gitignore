@@ -24,3 +24,11 @@ metrics-data/
 # VitePress
 docs/.vitepress/cache/
 docs/.vitepress/dist/
+
+# Deployment and testing
+.railway/
+.vercel/
+.render/
+*secret*
+*key*
+!*.example.*
