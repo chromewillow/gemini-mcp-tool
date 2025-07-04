@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "dist/server-http.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "dist/server-http.js"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "GOOGLE_GENERATIVE_AI_API_KEY": "@google_api_key"
+  },
+  "functions": {
+    "dist/server-http.js": {
+      "maxDuration": 30
+    }
+  }
+}

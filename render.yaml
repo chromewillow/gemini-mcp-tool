@@ -1,0 +1,17 @@
+# Render deployment configuration
+version: "1"
+
+services:
+  - type: web
+    name: gemini-mcp-server
+    env: node
+    buildCommand: npm run build
+    startCommand: node dist/server-http.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: GOOGLE_GENERATIVE_AI_API_KEY
+        sync: false
+    scaling:
+      minInstances: 1
+      maxInstances: 3
